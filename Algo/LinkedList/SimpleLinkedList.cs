@@ -10,7 +10,7 @@ namespace Algo.LinkedList
             
         }
 
-        public void BuildList()
+        public string BuildList()
         {
 
             Node first=new Node{value=3};
@@ -22,15 +22,19 @@ namespace Algo.LinkedList
             first.next=middle;
             middle.next=last;
 
-            PrntList(first);
+            return PrntList(first);
         }
-        private static void PrntList(Node node)
+        private string PrntList(Node node)
         {
+            string str=string.Empty;
+            
             while(node!=null)
             {
-                Console.Write(node.value);
+                str+=node.value.ToString();
                 node=node.next;
-            }
+            }        
+
+            return str;    
         }
     }
 
