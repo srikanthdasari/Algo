@@ -128,8 +128,8 @@ namespace Algo.Tests
             _listwithTwoCount.Add("third");
             Assert.AreEqual(3,_listwithTwoCount.Count);
             Assert.AreEqual("third",_listwithTwoCount.Head.Value);
-            Assert.AreEqual("first",_listwithTwoCount.Head.Next.Value);
-            Assert.AreEqual("second",_listwithTwoCount.Tail.Value);            
+            Assert.AreEqual("second",_listwithTwoCount.Head.Next.Value);
+            Assert.AreEqual("first",_listwithTwoCount.Tail.Value);            
         }
 
 
