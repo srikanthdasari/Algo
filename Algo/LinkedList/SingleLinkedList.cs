@@ -5,7 +5,7 @@ namespace Algo.LinkedList
 {
     public class SingleLinkedList<T>:ICollection<T>
     {
-            public SingleLinkedListNode<T> Head
+        public SingleLinkedListNode<T> Head
         {
             get; private set;
         }
@@ -18,48 +18,46 @@ namespace Algo.LinkedList
 
         public void AddFirst(T value)
         {
-            AddFirst(new SingleLinkedListNode<T>(value));
-        }
-
-        public void AddFirst(SingleLinkedListNode<T> node)
-        {
-            SingleLinkedListNode<T> temp=Head;
-
-            Head=node;
-
-            Head.Next=temp;
-
-           
-            if(Count==1)
+            //AddFirst(new SingleLinkedListNode<T>(value));
+            if(value!=null)
             {
-                Tail=Head;
+                var node=new SingleLinkedListNode<T>(value);
+                SingleLinkedListNode<T> temp=Head;
+
+                Head=node;
+
+                Head.Next=temp;
+                
+                Count++;
+            
+                if(Count==1)
+                {
+                    Tail=Head;
+                }
             }
-
-             Count++;
-
         }
-
 
         public void AddLast(T value)
         {
-            AddLast(new SingleLinkedListNode<T>(value));
+            if(value!=null)
+            {
+                var node=new SingleLinkedListNode<T>(value);
+                if(Count==0)
+                {
+                    Head=node;
+                }
+                else
+                {
+                    Tail.Next=node;
+                }
+
+                Tail=node;
+                Count++;
+            }
+                
         }
 
-        public void AddLast(SingleLinkedListNode<T> node)
-        {
-            if(Count==0)
-            {
-                Head=node;
-            }
-            else
-            {
-                Tail.Next=node;
-            }
-
-            Tail=node;
-            Count++;
-        }
-        
+       
         public void RemoveFirst()
         {
             if(Count!=0)
@@ -109,7 +107,8 @@ namespace Algo.LinkedList
 
         public void Add(T item)
         {
-            AddFirst(item);
+            if(item!=null)
+                AddFirst(item);
         }
 
 
