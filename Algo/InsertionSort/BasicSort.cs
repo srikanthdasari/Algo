@@ -1,9 +1,9 @@
 using System;
-
+using extensionlib;
 namespace Algo.InsertionSort {
     public class BasicSort {
         public int[] DoSort (int[] array) {
-            if (array == null) return null;
+            if (array.IsNull()) return null;
             
             for (var i=1;i<array.Length;i++) {
                 var key = array[i]; // Current Card
